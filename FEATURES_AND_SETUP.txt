@@ -1,0 +1,59 @@
+CAMPUS EVENT HUB - UPDATED PROJECT
+
+Technology:
+- Java Servlets and JSP
+- HTML, CSS and JavaScript
+- MySQL / MariaDB
+- javax.servlet imports (Tomcat 8.5 compatible)
+
+DATABASE:
+- Database name: campus_event_db
+- MySQL port in DBConnection.java: 3307
+- Username: root
+- Password: blank
+- The database.sql file is aligned with the supplied campus_event_db SQL export.
+
+EXISTING FEATURES RETAINED:
+1. Student registration and login
+2. Admin login and logout
+3. Student dashboard and profile update
+4. Search and category filter for events
+5. Event details and online registration
+6. Registration deadline and capacity validation
+7. Duplicate registration prevention
+8. My Events, registration receipt and cancellation
+9. Attendance tracking
+10. Certificate generation for approved students marked present
+11. Admin event add, edit and delete
+12. Admin statistics and reports
+13. Student event feedback (rating and comment)
+
+ADDITIONS / ADJUSTMENTS IN THIS PACKAGE:
+1. Admin can view student feedback at viewFeedback.
+2. Admin dashboard includes a View Feedback card.
+3. View Registrations is a read/attendance page only. It intentionally has no Approve or Reject buttons.
+4. Removed the dashboard link to the missing manageRegistrations URL.
+5. View Registrations page has responsive table layout and escaped database text.
+
+SETUP:
+1. Start Apache and MySQL in XAMPP.
+2. Import database.sql into phpMyAdmin. If you already imported the supplied campus_event_db database, do not import it again unless you want to recreate the database.
+3. Open the project in NetBeans.
+4. Confirm DBConnection.java uses your MySQL port, username and password.
+5. Use Apache Tomcat 8.5.x (javax.servlet API; do not change imports to jakarta.servlet).
+6. Clean and Build, then Run.
+
+DEFAULT ADMIN LOGIN FROM THE PROVIDED SQL:
+Username: admin
+Password: admin123
+
+IMPORTANT:
+The provided SQL stores passwords as plain text, matching the existing project code. For a real public deployment, passwords should be securely hashed and HTTPS should be enabled.
+
+
+LATEST UI / CERTIFICATE UPDATE (19-Nov-2026)
+- Student dashboard has four cards in one horizontal row on desktop: View Events, My Profile, My Registrations, Certificates.
+- Cards become two columns on medium screens and one column on mobile.
+- My Certificates is a dedicated page and lists only Approved registrations where attended=1.
+- Admin must approve the registration and mark attendance as Present before the certificate can be printed.
+- Registration Receipt remains separate under My Registrations; it is not the certificate.
