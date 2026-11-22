@@ -1,7 +1,9 @@
 FROM tomcat:9.0-jdk17-temurin
 
-# Install MariaDB
-RUN apt-get update && apt-get install -y mariadb-server mariadb-client && rm -rf /var/lib/apt/lists/*
+# Install MariaDB and utilities
+RUN apt-get update && apt-get install -y mariadb-server mariadb-client procps && rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_OPTS="-Xms64m -Xmx256m"
 
 WORKDIR /usr/local/tomcat
 
